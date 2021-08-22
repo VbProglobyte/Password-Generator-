@@ -16,19 +16,23 @@
     var passwordConfirmed = "";
      // CHARACTER STORAGE POOL //
     var passwordCharTypes = lCharacters + uCharacters + nCharacters + sCharacters; //character conditions  
-    // console.log(passwordCharTypes); this works 
+     
 
 // GENERATOR FUNCTION ----------------------------------------& return point-----------------------//
 function generatePassword() { 
     // 8 - 128 PROMPT AND CONDITION----------------password-length confirmations------------------------//
     var length = prompt("Please enter a number between 8 - 128 characters for password");
     
-    // length = passwordCharTypes.length;
+    // length = passwordCharTypes.length; also a guideline for numbers only 
     if (length < 8 || length > 128) {
         alert("You must choose a number between 8-128 characters");
-        return;
+        return generatePassword();
     }
-   
+    if (isNaN(length)) {
+        alert("Hey...I said number, not letter.");
+        return generatePassword();
+    }
+    
     // PROMPT CONFIRMS ---------------------------------------------character confirmations-----------//
     var isLower = confirm("Would you like lowercase letters?");
     var isUpper = confirm("Would you like uppercase letters?");
@@ -36,35 +40,32 @@ function generatePassword() {
     var isSymbol = confirm("Would you like symbols?");
     
     // --------------------------------------------------------------all character requirements met?    
-    if (!isLower || !isUpper || !isNumber || !isSymbol){
+    if (!isLower || !isUpper || !isNumber || !isSymbol) {
         alert("You must select at least one character type!");
-        return;
+        return generatePassword();
     } //-----if user does not select one of these, they will be kicked back to the beginning
+    
+    // CHARACTER CONDITIONS -----------------------------lower, upper, number, symbol---------------//
+     // four confirmation prompts for each type of character
+    
+     if (isLower) {
+        passwordCharTypes += lower;
+    }
+     if (isUpper) {
+        passwordCharTypes += upper;
+    }
+     if (isNumber) {
+        passwordCharTypes += number;
+    }
+     if (isSymbol) {
+        passwordCharTypes += symbol;
+    }
+
     
     // LOOP -----------------------------------------------------------infinite-------------//
     for (var i =0; i < length; i++) {
         passwordConfirmed += passwordCharTypes[Math.floor(Math.random() * passwordCharTypes.length)];
-    }
-    
-    // CHARACTER CONDITIONS -----------------------------lower, upper, number, symbol---------------//
-    // four confirmation prompts for each type of character
-   
-    if (isLower) {
-        passwordCharTypes += lower;
-    }
-    else if (isUpper) {
-        passwordCharTypes += upper;
-    }
-    else if (isNumber) {
-        passwordCharTypes += number;
-    }
-    else if (isSymbol) {
-        passwordCharTypes += symbol;
-    }
-    else {
-        if(passwordCharTypes !==1){
-            alert("You must choose a character type!");
-        }
+        
     }
     
 }
