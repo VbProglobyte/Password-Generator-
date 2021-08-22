@@ -7,24 +7,23 @@
     var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var number = "1234567890";
     var symbol = "!@#$%^&*()_+=-/.,<>:{}|";
-    // CHARACTER STORAGE //
-    var passwordCharTypes = ""; //character conditions 
-    var passwordConfirmed = "";
     // STRING SPLITTER ------turning into array
     var lCharacters = lower.split("");
     var uCharacters = upper.split("");
     var nCharacters = number.split("");
     var sCharacters = symbol.split("");
-     console.log(sCharacters); 
-    
+    //  console.log(sCharacters); 
+    var passwordConfirmed = "";
+
 // GENERATOR FUNCTION ----------------------------------------& return point-----------------------//
 function generatePassword(length) { 
+     // CHARACTER STORAGE //
+     var passwordCharTypes = "lower + upper + number + symbol"; //character conditions  
 
     // 8 - 128 PROMPT AND CONDITION----------------password-length confirmations------------------------//
     var length = prompt("Please enter a number between 8 - 128 characters for password");
     
     // length = passwordCharTypes.length;
-    
     if (length < 8 || length > 128) {
         alert("You must choose a number between 8-128 characters");
         return;
@@ -44,7 +43,7 @@ function generatePassword(length) {
     
     // LOOP -----------------------------------------------------------infinite-------------//
     for (var i =0; i < length; i++) {
-    passwordConfirmed += passwordCharTypes.charAt[Math.floor(Math.random() * passwordCharTypes.length)];
+        passwordConfirmed += passwordCharTypes[Math.floor(Math.random() * passwordCharTypes.length)];
     }
     
     // CHARACTER CONDITIONS -----------------------------lower, upper, number, symbol---------------//
@@ -67,7 +66,7 @@ function generatePassword(length) {
             alert("You must choose a character type!");
         }
     }
-   
+    
 }
 
 
