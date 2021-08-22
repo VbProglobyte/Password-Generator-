@@ -16,7 +16,7 @@
     var passwordConfirmed = "";
 
 // GENERATOR FUNCTION ----------------------------------------& return point-----------------------//
-function generatePassword(length) { 
+function generatePassword() { 
      // CHARACTER STORAGE //
      var passwordCharTypes = "lower + upper + number + symbol"; //character conditions  
 
