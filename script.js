@@ -8,8 +8,14 @@
     var number = "1234567890";
     var symbol = "!@#$%^&*()_+=-/.,<>:{}|";
     // CHARACTER STORAGE //
-    var passwordCharTypes = ""; //character conditions 
-    var passwordConfirmed = "";
+    var passwordCharTypes = "lower, upper, number, symbol"; //character conditions 
+    var passwordConfirmed = "isLower, isUpper, isNumber, isSymbol";
+
+    var lCharacters = lower.split("");
+    var uCharacters = upper.split("");
+    var nCharacters = number.split("");
+    var sCharacters = symbol.split("");
+    // console.log(symbol);
     
 // GENERATOR FUNCTION ----------------------------------------& return point-----------------------//
 function generatePassword() {
@@ -32,8 +38,9 @@ function generatePassword() {
         alert("You must select at least one character type!");
         return;
     }
+    
     // LOOP -----------------------------------------------------------infinite-------------//
-    for (var i =0; i < length; i++) {
+for (var i =0; i < length; i++) {
     passwordConfirmed += passwordCharTypes.charAt[Math.floor(Math.random() * passwordCharTypes.length)];
     }
     
