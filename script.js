@@ -12,14 +12,14 @@
     var uCharacters = upper.split("");
     var nCharacters = number.split("");
     var sCharacters = symbol.split("");
-    //  console.log(sCharacters); 
+    //  console.log(sCharacters); these work 
     var passwordConfirmed = "";
+     // CHARACTER STORAGE POOL //
+    var passwordCharTypes = lCharacters + uCharacters + nCharacters + sCharacters; //character conditions  
+    // console.log(passwordCharTypes); this works 
 
 // GENERATOR FUNCTION ----------------------------------------& return point-----------------------//
 function generatePassword() { 
-     // CHARACTER STORAGE //
-     var passwordCharTypes = "lower + upper + number + symbol"; //character conditions  
-
     // 8 - 128 PROMPT AND CONDITION----------------password-length confirmations------------------------//
     var length = prompt("Please enter a number between 8 - 128 characters for password");
     
