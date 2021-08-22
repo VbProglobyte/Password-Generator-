@@ -21,13 +21,14 @@
 // GENERATOR FUNCTION ----------------------------------------& return point-----------------------//
 function generatePassword() { 
     // 8 - 128 PROMPT AND CONDITION----------------password-length confirmations------------------------//
-    var length = prompt("Please enter a number between 8 - 128 characters for password");
+    var length = prompt("Please enter a number between 8 - 128 characters for a pretty decent password");
     
     // length = passwordCharTypes.length; also a guideline for numbers only 
     if (length < 8 || length > 128) {
         alert("You must choose a number between 8-128 characters");
         return generatePassword();
     }
+    // Hey...I said number...
     if (isNaN(length)) {
         alert("Hey...I said number, not letter.");
         return generatePassword();
@@ -41,7 +42,7 @@ function generatePassword() {
     
     // --------------------------------------------------------------all character requirements met?    
     if (!isLower || !isUpper || !isNumber || !isSymbol) {
-        alert("You must select at least one character type!");
+        alert("For an Olympic level password, I recommend selecting all character types.");
         return generatePassword();
     } //-----if user does not select one of these, they will be kicked back to the beginning
     
