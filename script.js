@@ -8,14 +8,14 @@
     var number = "1234567890";
     var symbol = "!@#$%^&*()_+=-/.,<>:{}|";
     // CHARACTER STORAGE //
-    var passwordCharTypes = "lower, upper, number, symbol"; //character conditions 
-    var passwordConfirmed = "isLower, isUpper, isNumber, isSymbol";
-
+    var passwordCharTypes = ""; //character conditions 
+    var passwordConfirmed = "";
+    // STRING SPLITTER ------turning into array
     var lCharacters = lower.split("");
     var uCharacters = upper.split("");
     var nCharacters = number.split("");
     var sCharacters = symbol.split("");
-    // console.log(symbol);
+     console.log(sCharacters); 
     
 // GENERATOR FUNCTION ----------------------------------------& return point-----------------------//
 function generatePassword() {
@@ -28,21 +28,22 @@ function generatePassword() {
         return;
     }
    
-    // CONFIRMS -------------------------------------------------------character confirmations-------------------//
+    // PROMPT CONFIRMS -------------------------------------------------------character confirmations-------------------//
     var isLower = confirm("Would you like lowercase letters?");
     var isUpper = confirm("Would you like uppercase letters?");
     var isNumber = confirm("Would you like numbers?");
     var isSymbol = confirm("Would you like symbols?");
+    
     // --------------------------------------------------------------all character requirements met?    
     if (!isLower || !isUpper || !isNumber || !isSymbol){
         alert("You must select at least one character type!");
         return;
-    }
+    } //-----if user does not select one of these, they will be kicked back to the beginning
     
     // LOOP -----------------------------------------------------------infinite-------------//
 for (var i =0; i < length; i++) {
     passwordConfirmed += passwordCharTypes.charAt[Math.floor(Math.random() * passwordCharTypes.length)];
-    }
+}
     
     // CHARACTER CONDITIONS -----------------------------lower, upper, number, symbol---------------//
     // four confirmation prompts for each type of character
