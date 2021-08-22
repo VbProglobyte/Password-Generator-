@@ -9,12 +9,10 @@
     var symbol = "!@#$%^&*()_+=-/.,<>:{}|";
     // CHARACTER STORAGE //
     var passwordCharTypes = ""; //character conditions 
+    var passwordConfirmed = "";
     
 // GENERATOR FUNCTION ----------------------------------------& return point-----------------------//
 function generatePassword() {
-    
-    var passwordConfirmed = "";
-    
 
     // 8 - 128 PROMPT AND CONDITION---------------------------password-length confirmations------------------------//
     var length = prompt("Please enter a number between 8 - 128 characters for password");
@@ -30,12 +28,12 @@ function generatePassword() {
     var isNumber = confirm("Would you like numbers?");
     var isSymbol = confirm("Would you like symbols?");
     // --------------------------------------------------------------all character requirements met?    
-    if (!isLower && !isUpper && !isNumber && !isSymbol){
+    if (!isLower || !isUpper || !isNumber || !isSymbol){
         alert("You must select at least one character type!");
         return;
     }
     // LOOP -----------------------------------------------------------infinite-------------//
-    for (i =0; i < length; i++) {
+    for (var i =0; i < length; i++) {
     passwordConfirmed += passwordCharTypes.charAt[Math.floor(Math.random() * passwordCharTypes.length)];
     }
     
@@ -45,14 +43,17 @@ function generatePassword() {
     if (isLower) {
         passwordCharTypes += lower;
     }
-    if (isUpper) {
+    else if (isUpper) {
         passwordCharTypes += upper;
     }
-    if (isNumber) {
+    else if (isNumber) {
         passwordCharTypes += number;
     }
-    if (isSymbol) {
+    else if (isSymbol) {
         passwordCharTypes += symbol;
+    }
+    else {
+        
     }
 }
 
