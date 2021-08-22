@@ -15,7 +15,7 @@
     //  console.log(sCharacters); these work 
     var passwordConfirmed = "";
      // CHARACTER STORAGE POOL //
-    var passwordCharTypes = lCharacters + uCharacters + nCharacters + sCharacters; //character conditions  
+    var passwordCharTypes = ""; //character conditions  
      
 
 // GENERATOR FUNCTION ----------------------------------------& return point-----------------------//
@@ -65,8 +65,8 @@ function generatePassword() {
     
     // LOOP -----------------------------------------------------------infinite-------------//
     for (var i =0; i < length; i++) {
-        passwordConfirmed += passwordCharTypes[Math.floor(Math.random() * passwordCharTypes.length)];
-        
+        passwordConfirmed = passwordCharTypes[Math.floor(Math.random() * passwordCharTypes.length)];
+        console.log(passwordConfirmed);
     }
     
 }
