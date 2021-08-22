@@ -18,17 +18,19 @@
      console.log(sCharacters); 
     
 // GENERATOR FUNCTION ----------------------------------------& return point-----------------------//
-function generatePassword() {
+function generatePassword(length) { 
 
-    // 8 - 128 PROMPT AND CONDITION---------------------------password-length confirmations------------------------//
+    // 8 - 128 PROMPT AND CONDITION----------------password-length confirmations------------------------//
     var length = prompt("Please enter a number between 8 - 128 characters for password");
+    
+    // length = passwordCharTypes.length;
     
     if (length < 8 || length > 128) {
         alert("You must choose a number between 8-128 characters");
         return;
     }
    
-    // PROMPT CONFIRMS -------------------------------------------------------character confirmations-------------------//
+    // PROMPT CONFIRMS ---------------------------------------------character confirmations-----------//
     var isLower = confirm("Would you like lowercase letters?");
     var isUpper = confirm("Would you like uppercase letters?");
     var isNumber = confirm("Would you like numbers?");
@@ -41,9 +43,9 @@ function generatePassword() {
     } //-----if user does not select one of these, they will be kicked back to the beginning
     
     // LOOP -----------------------------------------------------------infinite-------------//
-for (var i =0; i < length; i++) {
+    for (var i =0; i < length; i++) {
     passwordConfirmed += passwordCharTypes.charAt[Math.floor(Math.random() * passwordCharTypes.length)];
-}
+    }
     
     // CHARACTER CONDITIONS -----------------------------lower, upper, number, symbol---------------//
     // four confirmation prompts for each type of character
@@ -61,8 +63,11 @@ for (var i =0; i < length; i++) {
         passwordCharTypes += symbol;
     }
     else {
-        
+        if(passwordCharTypes !==1){
+            alert("You must choose a character type!");
+        }
     }
+   
 }
 
 
