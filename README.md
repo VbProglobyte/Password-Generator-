@@ -7,6 +7,6 @@ Try it out for your next password.
 
 
 Click the URL to check out this random password generator 
-
+https://vbproglobyte.github.io/Password-Generator-/
 
 ![screencapture-file-C-Users-Doug-Desktop-code-Homework-homework-SMU-password-generator-Password-Generator-index-html-2021-08-22-19_06_37](https://user-images.githubusercontent.com/83515305/130374979-7f8c9c0a-7549-436b-a6c9-9559549bcb04.png)
