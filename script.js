@@ -13,7 +13,7 @@
     var nCharacters = number.split("");
     var sCharacters = symbol.split("");
     //  console.log(sCharacters); these work 
-    var passwordConfirmed = "";
+    var password = "";
      // CHARACTER STORAGE POOL //
     var passwordCharTypes = ""; //character conditions  
      
@@ -30,7 +30,7 @@ function generatePassword() {
     }
     // Hey...I said number...
     if (isNaN(length)) {
-        alert("Hey...I said number, not letter.");
+        alert("Hey...I said number, not...THAT.");
         return generatePassword();
     }
     
@@ -65,10 +65,10 @@ function generatePassword() {
     
     // LOOP -----------------------------------------------------------infinite-------------//
     for (var i =0; i < length; i++) {
-        passwordConfirmed = passwordCharTypes[Math.floor(Math.random() * passwordCharTypes.length)];
-        console.log(passwordConfirmed);
+        password += passwordCharTypes[Math.floor(Math.random() * passwordCharTypes.length)];
+        console.log(password);
     }
-    
+    return password; //for the result of the olympic level password
 }
 
 
